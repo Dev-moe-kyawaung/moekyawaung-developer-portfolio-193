@@ -1,0 +1,140 @@
+@import "tailwindcss";
+
+:root {
+  background: #09090b;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@keyframes softReveal {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Blueprint turns the same portfolio into a deep-navy technical drawing without duplicating markup. */
+.theme-blueprint {
+  background-color: #061522;
+  background-image:
+    linear-gradient(rgba(56, 189, 248, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(56, 189, 248, 0.05) 1px, transparent 1px);
+  background-size: 26px 26px;
+}
+
+.theme-blueprint .bg-zinc-950,
+.theme-blueprint .bg-black {
+  background-color: #061522 !important;
+}
+
+.theme-blueprint .bg-zinc-900,
+.theme-blueprint .bg-zinc-900\/40,
+.theme-blueprint .bg-zinc-900\/50,
+.theme-blueprint .bg-zinc-900\/60,
+.theme-blueprint .bg-zinc-900\/80,
+.theme-blueprint .bg-zinc-900\/90 {
+  background-color: rgba(10, 35, 55, 0.9) !important;
+}
+
+.theme-blueprint .border-zinc-800,
+.theme-blueprint .border-zinc-800\/80,
+.theme-blueprint .border-zinc-800\/70,
+.theme-blueprint .border-zinc-850 {
+  border-color: rgba(56, 189, 248, 0.24) !important;
+}
+
+.theme-blueprint .text-emerald-400,
+.theme-blueprint .text-emerald-300 {
+  color: #38bdf8 !important;
+}
+
+.theme-blueprint .bg-emerald-400,
+.theme-blueprint .bg-emerald-500 {
+  background-color: #38bdf8 !important;
+}
+
+.theme-blueprint .border-emerald-400,
+.theme-blueprint .border-emerald-500\/50 {
+  border-color: #38bdf8 !important;
+}
+
+/* Paper mode is editorial and high-contrast for long-form reviews and print preparation. */
+.theme-light {
+  background-color: #f6f4ef;
+  background-image: linear-gradient(90deg, rgba(39, 39, 42, 0.035) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+.theme-light .bg-zinc-950,
+.theme-light .bg-black {
+  background-color: #fafaf9 !important;
+}
+
+.theme-light .bg-zinc-900,
+.theme-light .bg-zinc-900\/40,
+.theme-light .bg-zinc-900\/50,
+.theme-light .bg-zinc-900\/60,
+.theme-light .bg-zinc-900\/80,
+.theme-light .bg-zinc-900\/90 {
+  background-color: rgba(244, 244, 245, 0.94) !important;
+}
+
+.theme-light .border-zinc-950,
+.theme-light .border-zinc-900,
+.theme-light .border-zinc-850,
+.theme-light .border-zinc-800,
+.theme-light .border-zinc-800\/80,
+.theme-light .border-zinc-800\/70,
+.theme-light .border-zinc-700 {
+  border-color: #d4d4d8 !important;
+}
+
+.theme-light .text-zinc-100,
+.theme-light .text-zinc-200,
+.theme-light .text-zinc-300 {
+  color: #18181b !important;
+}
+
+.theme-light .text-zinc-400,
+.theme-light .text-zinc-500,
+.theme-light .text-zinc-600 {
+  color: #52525b !important;
+}
+
+.theme-light .bg-emerald-950\/80,
+.theme-light .bg-emerald-950\/40,
+.theme-light .bg-emerald-950\/30,
+.theme-light .bg-emerald-950\/20 {
+  background-color: rgba(209, 250, 229, 0.65) !important;
+}
+
+@media print {
+  body > *:not(#root) {
+    display: none;
+  }
+
+  #root > div > *:not(:has(#printable-dossier)) {
+    display: none !important;
+  }
+
+  #printable-dossier {
+    display: block !important;
+  }
+}
